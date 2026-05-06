@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>PM SHRI Govt Inter College Kandiyalgoan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0d2240;--navy2:#1a3a6b;--gold:#e8a020;--gold2:#f5c842;--light:#f7f9fc;--white:#fff;--gray:#6b7280;--lgray:#e8ecf2;--red:#c0392b;--green:#1e7a3c;--ff:'DM Sans',sans-serif;--fh:'Playfair Display',serif}
+body{font-family:var(--ff);background:var(--light);color:#1a1a2e;overflow-x:hidden}
+.nav{position:sticky;top:0;z-index:999;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.5rem;gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:.65rem;text-decoration:none;flex-shrink:0}
+.nav-logo-icon{width:44px;height:44px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:1rem;font-family:var(--fh)}
+.nav-name strong{display:block;font-size:.82rem;font-weight:600;color:#fff}
+.nav-name span{font-size:.68rem;color:#a0b4cc}
+.nav-links{display:flex;gap:0;list-style:none;flex-wrap:wrap}
+.nav-links a{display:block;padding:.45rem .8rem;color:#c8d8e8;text-decoration:none;font-size:.78rem;font-weight:500;border-radius:6px;transition:.2s;cursor:pointer}
+.nav-links a:hover{color:var(--gold);background:rgba(255,255,255,.07)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.3rem}
+.mobile-menu{display:none;flex-direction:column;background:var(--navy);padding:.75rem 1.5rem;gap:.15rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:#c8d8e8;text-decoration:none;padding:.5rem .5rem;font-size:.85rem;border-radius:6px;cursor:pointer}
+.mobile-menu a:hover{color:var(--gold)}
+.hero{min-height:88vh;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#1f4e8c 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding:3rem 1.5rem}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(232,160,32,.07) 0%,transparent 60%)}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;width:100%}
+.hero-badge{display:inline-block;background:rgba(232,160,32,.18);border:1px solid var(--gold);color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:.35rem .9rem;border-radius:20px;margin-bottom:1.2rem}
+.hero h1{font-family:var(--fh);font-size:2.5rem;color:#fff;line-height:1.25;margin-bottom:1rem}
+.hero h1 span{color:var(--gold2)}
+.hero p{color:#a0b8d0;font-size:1rem;line-height:1.7;margin-bottom:2rem}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.6rem;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.2s;font-family:var(--ff)}
+.btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold2)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-outline:hover{background:rgba(255,255,255,.08);border-color:#fff}
+.hero-visual{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.stats-bar{background:#fff;border-bottom:1px solid var(--lgray)}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat-card{text-align:center;padding:1.75rem 1rem;border-right:1px solid var(--lgray)}
+.stat-card:last-child{border-right:none}
+.stat-icon{font-size:1.8rem;margin-bottom:.6rem}
+.stat-num{font-family:var(--fh);font-size:1.9rem;font-weight:700;color:var(--navy);line-height:1}
+.stat-label{font-size:.74rem;color:var(--gray);font-weight:500;letter-spacing:.4px;text-transform:uppercase;margin-top:.3rem}
+.section{padding:5rem 1.5rem}
+.section-alt{background:#fff}
+.sec-inner{max-width:1200px;margin:0 auto}
+.sec-tag{display:inline-block;color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
+.sec-title{font-family:var(--fh);font-size:2rem;color:var(--navy);margin-bottom:.75rem;font-weight:700}
+.divider{width:56px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:2rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.read-more-btn{color:var(--navy2);font-weight:600;cursor:pointer;font-size:.88rem;text-decoration:underline;background:none;border:none;font-family:var(--ff);padding:0;margin-top:.5rem}
+.principal-card{background:var(--navy);border-radius:16px;padding:2rem;color:#fff}
+.p-avatar{width:64px;height:64px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:1.4rem;color:var(--navy);font-weight:700;margin-bottom:1rem}
+.principal-card h3{font-family:var(--fh);font-size:1.05rem;color:#fff;margin-bottom:.2rem}
+.p-role{color:var(--gold);font-size:.74rem;font-weight:600;letter-spacing:.5px;margin-bottom:.9rem}
+.principal-card p{font-size:.85rem;color:#a0b8d0;line-height:1.7}
+.quote-m{font-size:2.8rem;color:rgba(232,160,32,.3);font-family:var(--fh);line-height:1;margin-bottom:.5rem}
+.staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.15rem;margin-top:2rem}
+.staff-card{background:#fff;border-radius:14px;padding:1.4rem 1rem;text-align:center;border:1px solid var(--lgray);transition:.2s}
+.staff-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,34,64,.1)}
+.staff-av{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .85rem;font-family:var(--fh);font-size:1.3rem;color:#fff;font-weight:700}
+.staff-name{font-weight:600;font-size:.84rem;color:var(--navy);margin-bottom:.2rem}
+.staff-sub{font-size:.74rem;color:var(--gold);font-weight:600}
+.fac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.4rem;margin-top:2rem}
+.fac-card{background:#fff;border-radius:14px;padding:1.6rem;border:1px solid var(--lgray);transition:.2s}
+.fac-card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(232,160,32,.1)}
+.fac-icon{font-size:2rem;margin-bottom:.9rem}
+.fac-card h3{font-family:var(--fh);font-size:1rem;color:var(--navy);margin-bottom:.4rem}
+.fac-card p{font-size:.82rem;color:var(--gray);line-height:1.6}
+.gallery-section{background:var(--navy)}
+.gallery-section .sec-title{color:#fff}
+.gallery-section .sec-tag{color:var(--gold2)}
+.gallery-section .divider{background:rgba(232,160,32,.5)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+.gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;position:relative;cursor:pointer;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#8097b0;font-size:.82rem;gap:.5rem}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;padding:.75rem .75rem .5rem;font-size:.78rem;font-weight:500}
+.gallery-empty{text-align:center;color:#7a8fa6;padding:3rem;grid-column:1/-1}
+.gallery-empty span{font-size:2.5rem;display:block;margin-bottom:.5rem}
+.notices-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-top:2rem}
+.notice-item{display:flex;gap:.9rem;align-items:flex-start;padding:1.1rem;border-radius:10px;background:var(--light);border-left:4px solid var(--gold)}
+.notice-title{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:.2rem}
+.notice-date{font-size:.73rem;color:var(--gray)}
+.tag-n{display:inline-block;padding:.18rem .55rem;border-radius:3px;font-size:.7rem;font-weight:600}
+.tag-new{background:#fef3c7;color:#92400e}
+.tag-pdf{background:#fee2e2;color:var(--red)}
+.dl-section{background:#fff}
+.dl-categories{display:flex;gap:.75rem;margin-bottom:2rem;flex-wrap:wrap}
+.dl-cat-btn{padding:.45rem 1.1rem;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;border:2px solid var(--lgray);background:#fff;color:var(--gray);transition:.2s;font-family:var(--ff)}
+.dl-cat-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.dl-card{background:var(--light);border-radius:12px;padding:1.15rem;display:flex;align-items:center;gap:.8rem;border:1px solid var(--lgray);transition:.2s}
+.dl-card:hover{border-color:var(--navy2);box-shadow:0 4px 16px rgba(13,34,64,.08)}
+.dl-icon-box{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem}
+.dl-pdf{background:#fee2e2}.dl-doc{background:#dbeafe}.dl-img{background:#d1fae5}.dl-other{background:#f3e8ff}
+.dl-info{flex:1;min-width:0}
+.dl-name{font-weight:600;font-size:.82rem;color:var(--navy);margin-bottom:.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dl-meta{font-size:.72rem;color:var(--gray)}
+.dl-btn{width:32px;height:32px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;cursor:pointer;border:none;flex-shrink:0;transition:.2s}
+.dl-btn:hover{background:var(--navy2)}
+.dl-empty{text-align:center;color:var(--gray);padding:2.5rem;grid-column:1/-1;font-size:.9rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem}
+.contact-card{background:var(--navy);border-radius:16px;padding:2rem;color:#fff}
+.contact-card h3{font-family:var(--fh);font-size:1.2rem;color:#fff;margin-bottom:1.4rem}
+.ci{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.15rem}
+.ci-icon{width:38px;height:38px;background:rgba(232,160,32,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.ci-text{font-size:.85rem;color:#a0b8d0;line-height:1.5}
+.ci-text strong{display:block;color:#fff;font-size:.88rem;margin-bottom:.1rem}
+.map-box{border-radius:16px;background:var(--light);border:1px solid var(--lgray);min-height:280px;display:flex;align-items:center;justify-content:center}
+.map-ph{text-align:center;color:var(--gray)}
+.map-ph .mi{font-size:2.8rem;margin-bottom:.6rem}
+.footer{background:#060f1c;padding:3rem 1.5rem 1.5rem;color:#7a8fa6}
+.foot-inner{max-width:1200px;margin:0 auto}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:2rem;margin-bottom:2.5rem}
+.foot-brand p{font-size:.83rem;line-height:1.7;margin-top:.6rem}
+.foot-logo{display:flex;align-items:center;gap:.65rem;margin-bottom:.6rem}
+.foot-logo-ic{width:38px;height:38px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:.85rem}
+.foot-logo-n{font-size:.83rem;color:#fff;font-weight:600;line-height:1.3}
+.footer h4{color:#fff;font-size:.84rem;font-weight:600;margin-bottom:.9rem;letter-spacing:.4px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:.45rem}
+.footer ul a{color:#7a8fa6;text-decoration:none;font-size:.8rem;transition:.2s;cursor:pointer}
+.footer ul a:hover{color:var(--gold)}
+.foot-news input{width:100%;padding:.55rem .9rem;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:7px;color:#fff;font-size:.82rem;margin-bottom:.45rem;font-family:var(--ff);outline:none}
+.foot-news input::placeholder{color:#4a5a6a}
+.foot-news button{width:100%;padding:.55rem;background:var(--gold);color:var(--navy);border:none;border-radius:7px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:var(--ff)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:1.1rem;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;flex-wrap:wrap;gap:.5rem}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:3000;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:12px;object-fit:contain}
+.lb-close{position:absolute;top:1.5rem;right:1.5rem;width:40px;height:40px;background:rgba(255,255,255,.15);border:none;border-radius:50%;color:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.admin-bar{background:#7f1d1d;color:#fff;padding:.4rem 1.5rem;font-size:.76rem;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.abtn{background:rgba(255,255,255,.2);color:#fff;border:none;padding:.25rem .75rem;border-radius:4px;cursor:pointer;font-size:.73rem;font-family:var(--ff)}
+.login-wrap{min-height:100vh;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:2rem}
+.login-box{background:#fff;border-radius:20px;padding:2.5rem;max-width:400px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.l-logo{text-align:center;margin-bottom:2rem}
+.l-circle{width:70px;height:70px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .7rem;font-family:var(--fh);font-size:1.5rem;color:#fff}
+.l-logo h2{font-family:var(--fh);color:var(--navy);font-size:1.35rem}
+.l-logo p{color:var(--gray);font-size:.8rem;margin-top:.2rem}
+.fg{margin-bottom:1.2rem}
+.fg label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:.35rem}
+.fg input,.fg select,.fg textarea{width:100%;padding:.65rem 1rem;border:1.5px solid var(--lgray);border-radius:8px;font-size:.86rem;font-family:var(--ff);color:#1a1a2e;transition:.2s;outline:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--navy2)}
+.fg textarea{resize:vertical;min-height:80px}
+.btn-navy{background:var(--navy);color:#fff;border:none;width:100%;padding:.82rem;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--ff);transition:.2s}
+.btn-navy:hover{background:var(--navy2)}
+.err-box{background:#fee2e2;border:1px solid #fca5a5;border-radius:8px;padding:.7rem 1rem;font-size:.8rem;color:var(--red);margin-bottom:1rem}
+.dash-wrap{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.sidebar{background:var(--navy);position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb-logo{padding:1.2rem 1.1rem 1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.sb-logo strong{color:#fff;font-size:.88rem;display:block}
+.sb-logo span{color:#7a8fa6;font-size:.7rem}
+.sb-nav{list-style:none;padding:.5rem 0}
+.sb-nav li button{display:flex;align-items:center;gap:.65rem;padding:.65rem 1.1rem;color:#8097b0;font-size:.82rem;width:100%;background:none;border:none;cursor:pointer;font-family:var(--ff);text-align:left;transition:.15s;border-left:3px solid transparent}
+.sb-nav li button:hover{color:#fff;background:rgba(255,255,255,.06)}
+.sb-nav li button.active{color:#fff;background:rgba(255,255,255,.08);border-left-color:var(--gold)}
+.sb-section{padding:.5rem 1.1rem .2rem;font-size:.64rem;color:#4a5a6a;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-top:.5rem}
+.dash-content{background:var(--light);padding:2rem;overflow-y:auto}
+.dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem;flex-wrap:wrap;gap:1rem}
+.dh h1{font-family:var(--fh);font-size:1.5rem;color:var(--navy)}
+.dh p{font-size:.8rem;color:var(--gray);margin-top:.1rem}
+.dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-bottom:1.75rem}
+.ds{background:#fff;border-radius:12px;padding:1.15rem;border:1px solid var(--lgray)}
+.ds-ic{font-size:1.4rem;margin-bottom:.4rem}
+.ds-n{font-family:var(--fh);font-size:1.8rem;font-weight:700;color:var(--navy)}
+.ds-l{font-size:.74rem;color:var(--gray);margin-top:.15rem}
+.tw{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--lgray);margin-bottom:1.5rem}
+.tw-head{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.25rem;border-bottom:1px solid var(--lgray)}
+.tw-head h2{font-family:var(--fh);font-size:1.05rem;color:var(--navy)}
+.at{width:100%;border-collapse:collapse;font-size:.82rem}
+.at th{background:var(--navy);color:#fff;padding:.65rem 1rem;text-align:left;font-weight:600;font-size:.76rem;letter-spacing:.4px}
+.at td{padding:.7rem 1rem;border-bottom:1px solid var(--lgray);vertical-align:middle}
+.at tr:hover td{background:rgba(13,34,64,.02)}
+.at tr:last-child td{border-bottom:none}
+.bsm{padding:.38rem .85rem;font-size:.78rem;border-radius:6px;cursor:pointer;font-weight:600;font-family:var(--ff);border:none;transition:.15s}
+.b-add{background:var(--navy);color:#fff}.b-add:hover{background:var(--navy2)}
+.b-edit{background:#dbeafe;color:#1e40af}.b-edit:hover{background:#bfdbfe}
+.b-del{background:#fee2e2;color:var(--red)}.b-del:hover{background:#fecaca}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:2000;padding:1rem}
+.mb{background:#fff;border-radius:16px;padding:2rem;max-width:500px;width:100%;max-height:90vh;overflow-y:auto}
+.mb h3{font-family:var(--fh);font-size:1.15rem;color:var(--navy);margin-bottom:1.4rem}
+.ma{display:flex;gap:.7rem;justify-content:flex-end;margin-top:1.4rem}
+.upload-zone{border:2px dashed var(--lgray);border-radius:12px;padding:1.75rem;text-align:center;cursor:pointer;transition:.2s;background:var(--light)}
+.upload-zone:hover,.upload-zone.drag{border-color:var(--navy2);background:#f0f4ff}
+.upload-zone p{color:var(--gray);font-size:.82rem;margin-top:.4rem}
+.upload-zone .uz-icon{font-size:2rem;margin-bottom:.4rem}
+.file-preview{background:var(--light);border-radius:8px;padding:.65rem 1rem;display:flex;align-items:center;gap:.75rem;margin-top:.65rem;border:1px solid var(--lgray)}
+.fp-icon{font-size:1.4rem}
+.fp-name{font-size:.82rem;font-weight:600;color:var(--navy);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fp-size{font-size:.72rem;color:var(--gray);white-space:nowrap}
+.gal-admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.9rem;margin-top:1rem}
+.gal-admin-item{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3;border:1px solid var(--lgray)}
+.gal-admin-item img{width:100%;height:100%;object-fit:cover}
+.gal-admin-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;opacity:0;transition:.2s}
+.gal-admin-item:hover .gal-admin-overlay{opacity:1}
+.gal-admin-overlay span{font-size:.75rem;color:#fff;font-weight:600;text-align:center;padding:0 .5rem}
+.success-toast{position:fixed;bottom:2rem;right:2rem;background:var(--green);color:#fff;padding:.75rem 1.25rem;border-radius:10px;font-size:.84rem;font-weight:600;z-index:4000;box-shadow:0 8px 24px rgba(0,0,0,.2);animation:slidein .3s ease}
+.saving-toast{position:fixed;bottom:2rem;right:2rem;background:var(--navy);color:#fff;padding:.75rem 1.25rem;border-radius:10px;font-size:.84rem;font-weight:600;z-index:4000;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+@keyframes slidein{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.loading-screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--navy);color:#fff;gap:1rem}
+.loading-spinner{width:48px;height:48px;border:4px solid rgba(255,255,255,.15);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-visual{display:none}.about-grid,.contact-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr}.dash-stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.dash-wrap{grid-template-columns:1fr}.sidebar{position:static;height:auto}.nav-links{display:none}.nav-toggle{display:block}}
+@media(max-width:480px){.stats-inner,.dash-stats{grid-template-columns:1fr 1fr}.foot-grid{grid-template-columns:1fr}.hero h1{font-size:1.85rem}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script>
+const {useState,useEffect,useCallback,useRef}=React;
+const h=React.createElement;
+
+// ── DEFAULT DATA ─────────────────────────────────────
+const DEFAULT_TEACHERS=[
+  {id:1,name:'Mr. Ramesh Joshi',subject:'Mathematics',initials:'RJ',color:'#1a3a6b',imgUrl:null},
+  {id:2,name:'Mrs. Sunita Rawat',subject:'Science',initials:'SR',color:'#1e7a3c',imgUrl:null},
+  {id:3,name:'Mr. Deepak Pandey',subject:'Hindi',initials:'DP',color:'#7c3aed',imgUrl:null},
+  {id:4,name:'Mrs. Meena Bisht',subject:'English',initials:'MB',color:'#b45309',imgUrl:null},
+  {id:5,name:'Mr. Vivek Kumar',subject:'Social Science',initials:'VK',color:'#c0392b',imgUrl:null},
+  {id:6,name:'Mr. Anil Negi',subject:'Physics',initials:'AN',color:'#0f6e56',imgUrl:null},
+];
+const DEFAULT_NOTICES=[
+  {id:1,title:'Annual Sports Day 2024',date:'20 May 2024',isNew:true},
+  {id:2,title:'Science Exhibition on 25th May 2024',date:'15 May 2024',isNew:false},
+  {id:3,title:'Result Declaration – Class 10 & 12',date:'10 May 2024',isNew:false},
+  {id:4,title:'PTM scheduled for 5th June 2024',date:'8 May 2024',isNew:true},
+];
+const DEFAULT_DOWNLOADS=[
+  {id:1,name:'Fire Safety Certificate',type:'PDF',size:'245 KB',category:'Certificates',dataUrl:null},
+  {id:2,name:'Land Certificate',type:'PDF',size:'312 KB',category:'Certificates',dataUrl:null},
+  {id:3,name:'Building Certificate',type:'PDF',size:'198 KB',category:'Certificates',dataUrl:null},
+  {id:4,name:'Approval Letter',type:'PDF',size:'276 KB',category:'Documents',dataUrl:null},
+  {id:5,name:'School Registration',type:'PDF',size:'188 KB',category:'Documents',dataUrl:null},
+  {id:6,name:'Affiliation Document',type:'PDF',size:'340 KB',category:'Documents',dataUrl:null},
+];
+const DEFAULT_GALLERY=[
+  {id:1,caption:'School Building',dataUrl:null,color:'#1a3a6b'},
+  {id:2,caption:'Science Lab',dataUrl:null,color:'#1e7a3c'},
+  {id:3,caption:'Annual Function',dataUrl:null,color:'#7c3aed'},
+  {id:4,caption:'Sports Day',dataUrl:null,color:'#c0392b'},
+];
+const DEFAULT_CONTENT={
+  about:`PM SHRI Government Inter College Kandiyalgoan is a prestigious educational institution located in the serene hills of Uttarakhand. Established with the vision of providing quality education to the youth of the region, our college has been a beacon of learning for decades.\n\nThe school is named in honor of the "Pradhan Mantri Schools for Rising India" (PM SHRI) initiative, aimed at developing exemplary schools across the country. Our institution focuses on holistic development — nurturing academic excellence, social-emotional growth, creativity, confidence, and real-world skills.\n\nWe serve students from Classes 6 to 12 under the CBSE curriculum, with a dedicated team of over 15 experienced teachers committed to shaping responsible citizens.`,
+  principalName:'Mr. Ashish Kumar',
+  principalMsg:'Education is not merely about textbooks; it is about building character, values, and a foundation for a meaningful life. At PM SHRI Government Inter College Kandiyalgoan, we are committed to creating an environment where every student feels inspired and empowered to realize their full potential.',
+  phone:'9876543210',
+  email:'pmshri.kandiyalgoan@gov.in',
+  address:'Kandiyalgoan, Champawat, Uttarakhand – 262523',
+};
+
+// ── STORAGE HELPERS ──────────────────────────────────
+const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:5500/api' : `${window.location.origin}/api`;
+const KEYS={teachers:'teachers',notices:'notices',downloads:'downloads',gallery:'gallery',content:'content'};
+
+async function loadAll(){
+  const results={};
+  const pairs=[
+    ['teachers',KEYS.teachers,DEFAULT_TEACHERS],
+    ['notices',KEYS.notices,DEFAULT_NOTICES],
+    ['downloads',KEYS.downloads,DEFAULT_DOWNLOADS],
+    ['gallery',KEYS.gallery,DEFAULT_GALLERY],
+    ['content',KEYS.content,DEFAULT_CONTENT],
+  ];
+  for(const [key,endpoint,def] of pairs){
+    try{
+      const response = await fetch(`${API_BASE}/${endpoint}`);
+      if(response.ok){
+        results[key] = await response.json();
+      } else {
+        results[key] = def;
+      }
+    }catch{
+      results[key]=def;
+    }
+  }
+  return results;
+}
+
+async function saveKey(endpoint,data){
+  try{
+    const response = await fetch(`${API_BASE}/${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if(!response.ok) throw new Error('Save failed');
+  }
+  catch(e){console.error('Storage error',e);}
+}
+
+// ── FILE UTILS ───────────────────────────────────────
+function readFile(file){
+  return new Promise(res=>{const r=new FileReader();r.onload=e=>res(e.target.result);r.readAsDataURL(file);});
+}
+function formatSize(bytes){
+  if(!bytes)return'—';
+  if(bytes<1024)return bytes+' B';
+  if(bytes<1048576)return Math.round(bytes/1024)+' KB';
+  return(bytes/1048576).toFixed(1)+' MB';
+}
+function getExt(type=''){
+  const t=type.toUpperCase();
+  if(t.includes('PDF'))return'PDF';
+  if(t.includes('DOC'))return'DOC';
+  if(t.includes('IMAGE')||t.includes('PNG')||t.includes('JPG')||t.includes('JPEG'))return'IMG';
+  return'FILE';
+}
+function getFileIcon(type=''){
+  const t=type.toUpperCase();
+  if(t==='PDF')return{icon:'📄',cls:'dl-pdf'};
+  if(t==='DOC'||t==='DOCX')return{icon:'📝',cls:'dl-doc'};
+  if(t==='IMG'||t==='IMAGE')return{icon:'🖼️',cls:'dl-img'};
+  return{icon:'📎',cls:'dl-other'};
+}
+
+// ── TOAST ────────────────────────────────────────────
+function Toast({msg,saving,onDone}){
+  useEffect(()=>{if(!saving){const t=setTimeout(onDone,2500);return()=>clearTimeout(t);}},[saving]);
+  return h('div',{className:saving?'saving-toast':'success-toast'},saving?'💾 Saving…':msg);
+}
+
+// ── UPLOAD ZONE ──────────────────────────────────────
+function UploadZone({accept,onFile,file,label}){
+  const [drag,setDrag]=useState(false);
+  const ref=useRef();
+  const handle=async files=>{
+    if(!files||!files[0])return;
+    const f=files[0];
+    const url=await readFile(f);
+    onFile({name:f.name,size:formatSize(f.size),type:f.type,dataUrl:url});
+  };
+  return h('div',null,
+    h('div',{className:'upload-zone'+(drag?' drag':''),onClick:()=>ref.current.click(),
+      onDragOver:e=>{e.preventDefault();setDrag(true)},
+      onDragLeave:()=>setDrag(false),
+      onDrop:e=>{e.preventDefault();setDrag(false);handle(e.dataTransfer.files)}},
+      h('input',{ref,type:'file',accept,style:{display:'none'},onChange:e=>handle(e.target.files)}),
+      h('div',{className:'uz-icon'},'📂'),
+      h('p',null,label||'Click or drag & drop to upload'),
+      h('p',{style:{fontSize:'.7rem',color:'#9ca3af',marginTop:'.2rem'}},accept||'Any file')
+    ),
+    file&&h('div',{className:'file-preview'},
+      h('span',{className:'fp-icon'},file.type&&file.type.startsWith('image')?'🖼️':'📄'),
+      h('span',{className:'fp-name'},file.name),
+      h('span',{className:'fp-size'},file.size)
+    )
+  );
+}
+
+// ── MODAL ────────────────────────────────────────────
+function Modal({title,onClose,children}){
+  return h('div',{className:'mo',onClick:e=>{if(e.target.className==='mo')onClose()}},
+    h('div',{className:'mb'},h('h3',null,title),children)
+  );
+}
+
+// ── NAV ──────────────────────────────────────────────
+function NavBar({onAdminClick}){
+  const [open,setOpen]=useState(false);
+  const items=['Home','About','Staff','Facilities','Gallery','Downloads','Contact'];
+  const go=id=>{document.getElementById(id.toLowerCase())?.scrollIntoView({behavior:'smooth'});setOpen(false);};
+  return h('nav',{className:'nav'},
+    h('div',{className:'nav-inner'},
+      h('a',{className:'nav-logo',href:'#'},
+        h('div',{className:'nav-logo-icon'},'PM'),
+        h('div',{className:'nav-name'},h('strong',null,'PM SHRI Govt Inter College'),h('span',null,'Kandiyalgoan, Uttarakhand'))
+      ),
+      h('ul',{className:'nav-links'},
+        items.map(l=>h('li',{key:l},h('a',{onClick:e=>{e.preventDefault();go(l)}},l))),
+        h('li',null,h('a',{onClick:onAdminClick,style:{color:'var(--gold)',fontWeight:700}},'Admin'))
+      ),
+      h('button',{className:'nav-toggle',onClick:()=>setOpen(!open)},open?'✕':'☰')
+    ),
+    h('div',{className:'mobile-menu'+(open?' open':'')},
+      items.map(l=>h('a',{key:l,onClick:()=>go(l)},l)),
+      h('a',{onClick:onAdminClick,style:{color:'var(--gold)',fontWeight:700}},'Admin Panel')
+    )
+  );
+}
+
+// ── WEBSITE SECTIONS ─────────────────────────────────
+function Hero(){
+  const go=id=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  return h('section',{className:'hero',id:'home'},
+    h('div',{className:'hero-inner'},
+      h('div',null,
+        h('div',{className:'hero-badge'},'Empowering Future Minds'),
+        h('h1',null,'PM SHRI Government Inter College ',h('span',null,'Kandiyalgoan')),
+        h('p',null,'Empowering future minds through quality education, creativity, and real-world skills in the heart of Uttarakhand.'),
+        h('div',{className:'hero-btns'},
+          h('button',{className:'btn btn-gold',onClick:()=>go('contact')},'📞 Contact Us'),
+          h('button',{className:'btn btn-outline',onClick:()=>go('about')},'Learn More →')
+        )
+      ),
+      h('div',{className:'hero-visual'},
+        h('svg',{viewBox:'0 0 320 240',xmlns:'http://www.w3.org/2000/svg',width:'100%'},
+          h('rect',{x:0,y:0,width:320,height:240,fill:'#0a1f3a'}),
+          h('rect',{x:20,y:55,width:280,height:170,fill:'#f0f4f8',rx:3}),
+          h('rect',{x:20,y:46,width:280,height:16,fill:'#c8d8e8',rx:2}),
+          h('rect',{x:95,y:28,width:130,height:25,fill:'#c8d8e8',rx:2}),
+          ...[38,82,126,170,214].map(x=>h('rect',{key:'w1'+x,x,y:75,width:36,height:44,fill:'#4a8fd4',rx:2})),
+          ...[38,82,126,170,214].map(x=>h('rect',{key:'w2'+x,x,y:140,width:36,height:44,fill:'#4a8fd4',rx:2})),
+          h('rect',{x:128,y:178,width:64,height:47,fill:'#1a3a6b',rx:2}),
+          h('rect',{x:0,y:218,width:320,height:22,fill:'#1a4a1a'}),
+          h('text',{x:160,y:10,textAnchor:'middle',fill:'#7a9ab8',fontSize:7,fontFamily:'DM Sans'},'PM SHRI GOVT INTER COLLEGE KANDIYALGOAN')
+        )
+      )
+    )
+  );
+}
+
+function AboutSection({data}){
+  const [exp,setExp]=useState(false);
+  const paras=(data.about||'').split('\n\n').filter(Boolean);
+  const show=exp?paras:paras.slice(0,1);
+  return h('section',{className:'section section-alt',id:'about'},
+    h('div',{className:'sec-inner'},
+      h('div',{className:'about-grid'},
+        h('div',null,
+          h('div',{className:'sec-tag'},'Our Story'),
+          h('h2',{className:'sec-title'},'About Our College'),
+          h('div',{className:'divider'}),
+          show.map((p,i)=>h('p',{key:i,style:{color:'#374151',lineHeight:1.8,marginBottom:'.85rem',fontSize:'.94rem'}},p)),
+          paras.length>1&&h('button',{className:'read-more-btn',onClick:()=>setExp(!exp)},exp?'Show Less ↑':'Read More ↓')
+        ),
+        h('div',{className:'principal-card'},
+          h('div',{className:'quote-m'},'"'),
+          h('div',{className:'p-avatar'},(data.principalName||'AK').split(' ').slice(-2).map(w=>w[0]).join('')),
+          h('h3',null,data.principalName),
+          h('div',{className:'p-role'},'Principal'),
+          h('p',null,(data.principalMsg||'').slice(0,240)+'…')
+        )
+      )
+    )
+  );
+}
+
+function StaffSection({teachers}){
+  return h('section',{className:'section',id:'staff'},
+    h('div',{className:'sec-inner'},
+      h('div',{style:{textAlign:'center'}},
+        h('div',{className:'sec-tag'},'Our Team'),
+        h('h2',{className:'sec-title'},'Meet Our Staff'),
+        h('div',{className:'divider',style:{margin:'1rem auto 0'}})
+      ),
+      h('div',{className:'staff-grid'},
+        teachers.map(t=>h('div',{key:t.id,className:'staff-card'},
+          t.imgUrl
+            ?h('img',{src:t.imgUrl,alt:t.name,style:{width:68,height:68,borderRadius:'50%',objectFit:'cover',display:'block',margin:'0 auto .85rem'}})
+            :h('div',{className:'staff-av',style:{background:`linear-gradient(135deg,${t.color},${t.color}88)`}},t.initials),
+          h('div',{className:'staff-name'},t.name),
+          h('div',{className:'staff-sub'},t.subject)
+        ))
+      )
+    )
+  );
+}
+
+function FacilitiesSection(){
+  const facs=[
+    {icon:'🔬',title:'Biology Lab',desc:'Fully equipped laboratory with modern apparatus for practical learning.'},
+    {icon:'🖥️',title:'Smart Classes',desc:'Digital classrooms with smart boards and audio-visual aids.'},
+    {icon:'📚',title:'Library',desc:'Rich collection of books and study material for academic enrichment.'},
+    {icon:'🍱',title:'Mid-Day Meal Scheme',desc:'Nutritious meals provided to all students under the government scheme.'},
+  ];
+  return h('section',{className:'section section-alt',id:'facilities'},
+    h('div',{className:'sec-inner'},
+      h('div',{className:'sec-tag'},'Infrastructure'),
+      h('h2',{className:'sec-title'},'Our Facilities'),
+      h('div',{className:'divider'}),
+      h('div',{className:'fac-grid'},facs.map(f=>h('div',{key:f.title,className:'fac-card'},h('div',{className:'fac-icon'},f.icon),h('h3',null,f.title),h('p',null,f.desc))))
+    )
+  );
+}
+
+function GallerySection({gallery}){
+  const [lb,setLb]=useState(null);
+  return h('section',{className:'section gallery-section',id:'gallery'},
+    h('div',{className:'sec-inner'},
+      h('div',{className:'sec-tag'},'Campus Life'),
+      h('h2',{className:'sec-title'},'Photo Gallery'),
+      h('div',{className:'divider'}),
+      gallery.length===0
+        ?h('div',{className:'gallery-empty'},h('span',null,'🖼️'),'No photos yet. Admin can upload from the panel.')
+        :h('div',{className:'gallery-grid'},
+            gallery.map(g=>h('div',{key:g.id,className:'gallery-item',onClick:()=>g.dataUrl&&setLb(g)},
+              g.dataUrl
+                ?h('img',{src:g.dataUrl,alt:g.caption})
+                :h('div',{className:'gallery-placeholder',style:{background:(g.color||'#1a3a6b')+'22'}},h('span',{style:{fontSize:'2rem'}},'🏫'),g.caption),
+              h('div',{className:'gallery-caption'},g.caption)
+            ))
+          ),
+      lb&&h('div',{className:'lightbox',onClick:()=>setLb(null)},
+        h('button',{className:'lb-close',onClick:()=>setLb(null)},'✕'),
+        h('img',{src:lb.dataUrl,alt:lb.caption})
+      )
+    )
+  );
+}
+
+function NoticesSection({notices}){
+  return h('section',{className:'section',id:'notices',style:{background:'#fff'}},
+    h('div',{className:'sec-inner'},
+      h('div',{className:'sec-tag'},'Updates'),
+      h('h2',{className:'sec-title'},'Notices & Updates'),
+      h('div',{className:'divider'}),
+      notices.length===0
+        ?h('p',{style:{color:'var(--gray)',fontSize:'.9rem'}},'No notices posted yet.')
+        :h('div',{className:'notices-grid'},
+            notices.map(n=>h('div',{key:n.id,className:'notice-item'},
+              h('span',{style:{fontSize:'1.4rem',flexShrink:0}},'📢'),
+              h('div',null,
+                h('div',{style:{display:'flex',alignItems:'center',gap:'.5rem',marginBottom:'.2rem',flexWrap:'wrap'}},
+                  h('div',{className:'notice-title'},n.title),
+                  n.isNew&&h('span',{className:'tag-n tag-new'},'NEW')
+                ),
+                h('div',{className:'notice-date'},n.date)
+              )
+            ))
+          )
+    )
+  );
+}
+
+function DownloadsSection({downloads}){
+  const [cat,setCat]=useState('All');
+  const allCats=['All',...Array.from(new Set(downloads.map(d=>d.category).filter(Boolean)))];
+  const filtered=cat==='All'?downloads:downloads.filter(d=>d.category===cat);
+  const doDownload=d=>{
+    if(d.dataUrl){
+      const a=document.createElement('a');
+      a.href=d.dataUrl;
+      a.download=d.name+(d.type?'.'+d.type.toLowerCase():'');
+      a.click();
+    } else {
+      alert('No file uploaded yet for: "'+d.name+'"\n\nAn admin needs to upload this file from the Admin Panel.');
+    }
+  };
+  return h('section',{className:'section dl-section',id:'downloads'},
+    h('div',{className:'sec-inner'},
+      h('div',{className:'sec-tag'},'Resources'),
+      h('h2',{className:'sec-title'},'Downloads'),
+      h('div',{className:'divider'}),
+      allCats.length>1&&h('div',{className:'dl-categories'},
+        allCats.map(c=>h('button',{key:c,className:'dl-cat-btn'+(cat===c?' active':''),onClick:()=>setCat(c)},c))
+      ),
+      filtered.length===0
+        ?h('div',{className:'dl-empty'},'No files in this category.')
+        :h('div',{className:'dl-grid'},
+            filtered.map(d=>{
+              const {icon,cls}=getFileIcon(d.type);
+              return h('div',{key:d.id,className:'dl-card'},
+                h('div',{className:'dl-icon-box '+cls},icon),
+                h('div',{className:'dl-info'},
+                  h('div',{className:'dl-name'},d.name),
+                  h('div',{className:'dl-meta'},
+                    (d.type||'FILE')+' · '+(d.size||'—')+' · ',
+                    d.dataUrl?h('span',{style:{color:'var(--green)',fontWeight:600}},'✅ Ready'):h('span',{style:{color:'#92400e'}},'⏳ Pending')
+                  )
+                ),
+                h('button',{className:'dl-btn',onClick:()=>doDownload(d),title:d.dataUrl?'Download':'File not uploaded yet'},'⬇')
+              );
+            })
+          )
+    )
+  );
+}
+
+function ContactSection({data}){
+  return h('section',{className:'section',id:'contact',style:{background:'var(--light)'}},
+    h('div',{className:'sec-inner'},
+      h('div',{className:'sec-tag'},'Reach Us'),
+      h('h2',{className:'sec-title'},'Get In Touch'),
+      h('div',{className:'divider'}),
+      h('div',{className:'contact-grid'},
+        h('div',{className:'contact-card'},
+          h('h3',null,'Contact Information'),
+          h('div',{className:'ci'},h('div',{className:'ci-icon'},'📞'),h('div',{className:'ci-text'},h('strong',null,'Phone'),data.phone)),
+          h('div',{className:'ci'},h('div',{className:'ci-icon'},'✉️'),h('div',{className:'ci-text'},h('strong',null,'Email'),data.email)),
+          h('div',{className:'ci'},h('div',{className:'ci-icon'},'📍'),h('div',{className:'ci-text'},h('strong',null,'Address'),data.address)),
+          h('div',{className:'ci'},h('div',{className:'ci-icon'},'🏛️'),h('div',{className:'ci-text'},h('strong',null,'Affiliation No.'),'3520102 (CBSE)'))
+        ),
+        h('div',{className:'map-box'},
+          h('div',{className:'map-ph'},h('div',{className:'mi'},'🗺️'),h('p',{style:{fontWeight:600,color:'#374151',marginBottom:'.25rem'}},'PM SHRI Govt Inter College'),h('p',null,'Kandiyalgoan, Champawat'),h('p',null,'Uttarakhand, India'))
+        )
+      )
+    )
+  );
+}
+
+function FooterSection(){
+  const go=id=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  return h('footer',{className:'footer'},
+    h('div',{className:'foot-inner'},
+      h('div',{className:'foot-grid'},
+        h('div',{className:'foot-brand'},
+          h('div',{className:'foot-logo'},h('div',{className:'foot-logo-ic'},'PM'),h('div',{className:'foot-logo-n'},'PM SHRI Govt Inter College Kandiyalgoan')),
+          h('p',null,'Empowering students with knowledge, values and skills for a brighter future.')
+        ),
+        h('div',null,h('h4',null,'Quick Links'),h('ul',null,['Home','About','Staff','Facilities','Gallery','Downloads','Contact'].map(l=>h('li',{key:l},h('a',{onClick:()=>go(l.toLowerCase())},l))))),
+        h('div',null,h('h4',null,'Useful Links'),h('ul',null,['CBSE Official','DIKSHA Portal','NCERT','Samagra Shiksha','Privacy Policy'].map(l=>h('li',{key:l},h('a',{href:'#'},l))))),
+        h('div',{className:'foot-news'},h('h4',null,'Newsletter'),h('p',{style:{fontSize:'.8rem',marginBottom:'.65rem'}},'Subscribe for notices & updates.'),h('input',{type:'email',placeholder:'Enter your email'}),h('button',null,'Subscribe'))
+      ),
+      h('div',{className:'foot-bottom'},h('span',null,'© 2024 PM SHRI Govt Inter College Kandiyalgoan. All Rights Reserved.'),h('span',null,'Designed with ♥ for Education'))
+    )
+  );
+}
+
+// ── ADMIN TABS ───────────────────────────────────────
+function TeachersTab({teachers,onUpdate,toast}){
+  const [modal,setModal]=useState(null);
+  const [form,setForm]=useState({name:'',subject:'',initials:'',color:'#1a3a6b',imgUrl:null});
+  const [imgFile,setImgFile]=useState(null);
+  const colors=['#1a3a6b','#1e7a3c','#7c3aed','#b45309','#c0392b','#0f6e56','#0369a1','#854d0e'];
+  const openAdd=()=>{setForm({name:'',subject:'',initials:'',color:'#1a3a6b',imgUrl:null});setImgFile(null);setModal('add');};
+  const openEdit=t=>{setForm({...t});setImgFile(null);setModal('edit');};
+  const save=()=>{
+    if(!form.name||!form.subject){alert('Name and subject are required.');return;}
+    const ini=form.initials||form.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    const entry={...form,initials:ini,imgUrl:imgFile?imgFile.dataUrl:form.imgUrl};
+    let next;
+    if(modal==='add')next=[...teachers,{...entry,id:Date.now()}];
+    else next=teachers.map(t=>t.id===form.id?{...entry,id:form.id}:t);
+    onUpdate(next);setModal(null);toast(modal==='add'?'Teacher added & saved!':'Teacher updated & saved!');
+  };
+  const del=id=>{onUpdate(teachers.filter(t=>t.id!==id));toast('Teacher deleted.');};
+  return h('div',null,
+    h('div',{className:'tw'},
+      h('div',{className:'tw-head'},h('h2',null,'Manage Teachers'),h('button',{className:'bsm b-add',onClick:openAdd},'+ Add Teacher')),
+      teachers.length===0?h('p',{style:{padding:'1.5rem',color:'var(--gray)',fontSize:'.88rem'}},'No teachers yet.'):
+      h('table',{className:'at'},
+        h('thead',null,h('tr',null,h('th',null,'Avatar'),h('th',null,'Name'),h('th',null,'Subject'),h('th',null,'Actions'))),
+        h('tbody',null,teachers.map(t=>h('tr',{key:t.id},
+          h('td',null,t.imgUrl?h('img',{src:t.imgUrl,style:{width:36,height:36,borderRadius:'50%',objectFit:'cover'}}):h('div',{style:{width:36,height:36,borderRadius:'50%',background:t.color,display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontWeight:700,fontSize:'.78rem'}},t.initials)),
+          h('td',null,t.name),
+          h('td',null,h('span',{style:{background:'#fef3c7',color:'#92400e',padding:'.18rem .55rem',borderRadius:3,fontSize:'.72rem',fontWeight:600}},t.subject)),
+          h('td',null,h('button',{className:'bsm b-edit',style:{marginRight:5},onClick:()=>openEdit(t)},'Edit'),h('button',{className:'bsm b-del',onClick:()=>del(t.id)},'Delete'))
+        )))
+      )
+    ),
+    modal&&h(Modal,{title:modal==='add'?'Add Teacher':'Edit Teacher',onClose:()=>setModal(null)},
+      h('div',{className:'fg'},h('label',null,'Full Name *'),h('input',{value:form.name,onChange:v=>setForm(p=>({...p,name:v.target.value})),placeholder:'Mr./Mrs. Full Name'})),
+      h('div',{className:'fg'},h('label',null,'Subject *'),h('input',{value:form.subject,onChange:v=>setForm(p=>({...p,subject:v.target.value})),placeholder:'e.g. Mathematics'})),
+      h('div',{className:'fg'},h('label',null,'Initials (auto-generated if blank)'),h('input',{value:form.initials,onChange:v=>setForm(p=>({...p,initials:v.target.value})),maxLength:2,placeholder:'e.g. RJ'})),
+      h('div',{className:'fg'},h('label',null,'Profile Photo (optional)'),h(UploadZone,{accept:'image/*',file:imgFile,onFile:setImgFile,label:'Upload teacher photo'})),
+      h('div',{className:'fg'},h('label',null,'Avatar Color'),h('div',{style:{display:'flex',gap:7,flexWrap:'wrap',marginTop:'.3rem'}},colors.map(c=>h('div',{key:c,onClick:()=>setForm(p=>({...p,color:c})),style:{width:26,height:26,borderRadius:'50%',background:c,cursor:'pointer',border:form.color===c?'3px solid #000':'3px solid transparent'}})))),
+      h('div',{className:'ma'},h('button',{className:'bsm b-del',onClick:()=>setModal(null)},'Cancel'),h('button',{className:'bsm b-add',onClick:save},'Save'))
+    )
+  );
+}
+
+function GalleryTab({gallery,onUpdate,toast}){
+  const [modal,setModal]=useState(false);
+  const [caption,setCaption]=useState('');
+  const [imgFile,setImgFile]=useState(null);
+  const save=()=>{
+    if(!imgFile){alert('Please select a photo.');return;}
+    onUpdate([...gallery,{id:Date.now(),caption:caption||'School Photo',dataUrl:imgFile.dataUrl,color:'#1a3a6b'}]);
+    setModal(false);setCaption('');setImgFile(null);toast('Photo uploaded & saved!');
+  };
+  const del=id=>{onUpdate(gallery.filter(g=>g.id!==id));toast('Photo deleted.');};
+  return h('div',null,
+    h('div',{className:'tw'},
+      h('div',{className:'tw-head'},h('h2',null,'Manage Gallery'),h('button',{className:'bsm b-add',onClick:()=>{setCaption('');setImgFile(null);setModal(true);}},'+ Upload Photo')),
+      h('div',{style:{padding:'1.25rem'}},
+        gallery.length===0
+          ?h('div',{style:{textAlign:'center',color:'var(--gray)',padding:'2rem',fontSize:'.88rem'}},'No photos yet. Click "+ Upload Photo" to add.')
+          :h('div',{className:'gal-admin-grid'},
+              gallery.map(g=>h('div',{key:g.id,className:'gal-admin-item'},
+                g.dataUrl?h('img',{src:g.dataUrl,alt:g.caption}):h('div',{style:{width:'100%',height:'100%',background:(g.color||'#1a3a6b')+'33',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'1.5rem'}},'🏫'),
+                h('div',{className:'gal-admin-overlay'},h('span',null,g.caption),h('button',{className:'bsm b-del',onClick:()=>del(g.id)},'🗑 Delete'))
+              ))
+            )
+      )
+    ),
+    modal&&h(Modal,{title:'Upload Gallery Photo',onClose:()=>setModal(false)},
+      h('div',{className:'fg'},h('label',null,'Caption'),h('input',{value:caption,onChange:v=>setCaption(v.target.value),placeholder:'e.g. Annual Sports Day'})),
+      h('div',{className:'fg'},h('label',null,'Photo File *'),h(UploadZone,{accept:'image/*',file:imgFile,onFile:setImgFile,label:'Click or drag image here (JPG, PNG)'})),
+      h('div',{className:'ma'},h('button',{className:'bsm b-del',onClick:()=>setModal(false)},'Cancel'),h('button',{className:'bsm b-add',onClick:save},'Upload & Save'))
+    )
+  );
+}
+
+function DownloadsTab({downloads,onUpdate,toast}){
+  const [modal,setModal]=useState(null);
+  const [form,setForm]=useState({name:'',category:'Certificates',fileData:null});
+  const openAdd=()=>{setForm({name:'',category:'Certificates',fileData:null});setModal('add');};
+  const openEdit=d=>{setForm({name:d.name,category:d.category||'Certificates',fileData:null,_id:d.id});setModal('edit');};
+  const save=()=>{
+    if(!form.name){alert('Please enter a file name.');return;}
+    if(modal==='add'&&!form.fileData){alert('Please select a file to upload.');return;}
+    let next;
+    if(modal==='add'){
+      const fd=form.fileData;
+      const ext=fd?getExt(fd.type):'FILE';
+      next=[...downloads,{id:Date.now(),name:form.name,type:ext,size:fd?fd.size:'—',category:form.category,dataUrl:fd?fd.dataUrl:null}];
+    } else {
+      next=downloads.map(d=>{
+        if(d.id!==form._id)return d;
+        const fd=form.fileData;
+        return{...d,name:form.name,category:form.category,...(fd?{type:getExt(fd.type),size:fd.size,dataUrl:fd.dataUrl}:{})};
+      });
+    }
+    onUpdate(next);setModal(null);toast(modal==='add'?'File uploaded & saved!':'File updated & saved!');
+  };
+  const del=id=>{onUpdate(downloads.filter(d=>d.id!==id));toast('File deleted.');};
+  return h('div',null,
+    h('div',{className:'tw'},
+      h('div',{className:'tw-head'},h('h2',null,'Manage Downloads'),h('button',{className:'bsm b-add',onClick:openAdd},'+ Upload File')),
+      downloads.length===0?h('p',{style:{padding:'1.5rem',color:'var(--gray)',fontSize:'.88rem'}},'No files yet.'):
+      h('table',{className:'at'},
+        h('thead',null,h('tr',null,h('th',null,'File'),h('th',null,'Type'),h('th',null,'Size'),h('th',null,'Category'),h('th',null,'Status'),h('th',null,'Actions'))),
+        h('tbody',null,downloads.map(d=>{
+          const {icon}=getFileIcon(d.type);
+          return h('tr',{key:d.id},
+            h('td',null,icon+' '+d.name),
+            h('td',null,h('span',{className:'tag-n tag-pdf'},d.type||'FILE')),
+            h('td',null,d.size||'—'),
+            h('td',null,d.category||'—'),
+            h('td',null,d.dataUrl?h('span',{style:{color:'var(--green)',fontSize:'.75rem',fontWeight:600}},'✅ Ready'):h('span',{style:{color:'#92400e',fontSize:'.75rem',fontWeight:600}},'⏳ Pending')),
+            h('td',null,h('button',{className:'bsm b-edit',style:{marginRight:4},onClick:()=>openEdit(d)},'Edit'),h('button',{className:'bsm b-del',onClick:()=>del(d.id)},'Delete'))
+          );
+        }))
+      )
+    ),
+    modal&&h(Modal,{title:modal==='add'?'Upload New File':'Edit File',onClose:()=>setModal(null)},
+      h('div',{className:'fg'},h('label',null,'Display Name *'),h('input',{value:form.name,onChange:v=>setForm(p=>({...p,name:v.target.value})),placeholder:'e.g. Fire Safety Certificate'})),
+      h('div',{className:'fg'},h('label',null,'Category'),h('select',{value:form.category,onChange:v=>setForm(p=>({...p,category:v.target.value}))},['Certificates','Documents','Forms','Reports','Other'].map(c=>h('option',{key:c},c)))),
+      h('div',{className:'fg'},h('label',null,modal==='edit'?'Replace File (optional)':'File *'),h(UploadZone,{accept:'.pdf,.doc,.docx,.png,.jpg,.jpeg',file:form.fileData,onFile:f=>setForm(p=>({...p,fileData:f})),label:'Click or drag PDF/DOC/Image here'})),
+      h('div',{className:'ma'},h('button',{className:'bsm b-del',onClick:()=>setModal(null)},'Cancel'),h('button',{className:'bsm b-add',onClick:save},'Save'))
+    )
+  );
+}
+
+function NoticesTab({notices,onUpdate,toast}){
+  const [modal,setModal]=useState(null);
+  const [form,setForm]=useState({title:'',date:'',isNew:false});
+  const openAdd=()=>{setForm({title:'',date:new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'}),isNew:true});setModal('add');};
+  const openEdit=n=>{setForm({...n});setModal('edit');};
+  const save=()=>{
+    if(!form.title){alert('Title is required.');return;}
+    let next;
+    if(modal==='add')next=[{...form,id:Date.now()},...notices];
+    else next=notices.map(n=>n.id===form.id?form:n);
+    onUpdate(next);setModal(null);toast(modal==='add'?'Notice added & saved!':'Notice updated!');
+  };
+  const del=id=>{onUpdate(notices.filter(n=>n.id!==id));toast('Notice deleted.');};
+  return h('div',null,
+    h('div',{className:'tw'},
+      h('div',{className:'tw-head'},h('h2',null,'Manage Notices'),h('button',{className:'bsm b-add',onClick:openAdd},'+ Add Notice')),
+      notices.length===0?h('p',{style:{padding:'1.5rem',color:'var(--gray)',fontSize:'.88rem'}},'No notices yet.'):
+      h('table',{className:'at'},
+        h('thead',null,h('tr',null,h('th',null,'Title'),h('th',null,'Date'),h('th',null,'Tag'),h('th',null,'Actions'))),
+        h('tbody',null,notices.map(n=>h('tr',{key:n.id},
+          h('td',null,n.title),h('td',null,n.date),
+          h('td',null,n.isNew&&h('span',{className:'tag-n tag-new'},'NEW')),
+          h('td',null,h('button',{className:'bsm b-edit',style:{marginRight:4},onClick:()=>openEdit(n)},'Edit'),h('button',{className:'bsm b-del',onClick:()=>del(n.id)},'Delete'))
+        )))
+      )
+    ),
+    modal&&h(Modal,{title:modal==='add'?'Add Notice':'Edit Notice',onClose:()=>setModal(null)},
+      h('div',{className:'fg'},h('label',null,'Notice Title *'),h('input',{value:form.title,onChange:v=>setForm(p=>({...p,title:v.target.value})),placeholder:'e.g. Annual Sports Day 2024'})),
+      h('div',{className:'fg'},h('label',null,'Date'),h('input',{value:form.date,onChange:v=>setForm(p=>({...p,date:v.target.value}))})),
+      h('div',{className:'fg',style:{display:'flex',alignItems:'center',gap:'.7rem'}},h('input',{type:'checkbox',checked:form.isNew,onChange:v=>setForm(p=>({...p,isNew:v.target.checked})),style:{width:16,height:16}}),h('label',null,'Mark as NEW')),
+      h('div',{className:'ma'},h('button',{className:'bsm b-del',onClick:()=>setModal(null)},'Cancel'),h('button',{className:'bsm b-add',onClick:save},'Save'))
+    )
+  );
+}
+
+function ContentTab({content,onUpdate,toast}){
+  const [form,setForm]=useState({...content});
+  useEffect(()=>setForm({...content}),[content]);
+  const save=()=>{onUpdate({...form});toast('Content saved & published!');};
+  return h('div',{style:{display:'flex',flexDirection:'column',gap:'1.25rem'}},
+    h('div',{className:'tw',style:{padding:'1.5rem'}},
+      h('h2',{style:{fontFamily:'var(--fh)',fontSize:'1.05rem',color:'var(--navy)',marginBottom:'1rem'}},'About Section'),
+      h('div',{className:'fg'},h('label',null,'About Text'),h('textarea',{rows:8,value:form.about,onChange:v=>setForm(p=>({...p,about:v.target.value}))}))
+    ),
+    h('div',{className:'tw',style:{padding:'1.5rem'}},
+      h('h2',{style:{fontFamily:'var(--fh)',fontSize:'1.05rem',color:'var(--navy)',marginBottom:'1rem'}},"Principal's Message"),
+      h('div',{className:'fg'},h('label',null,'Principal Name'),h('input',{value:form.principalName,onChange:v=>setForm(p=>({...p,principalName:v.target.value}))})),
+      h('div',{className:'fg'},h('label',null,'Message'),h('textarea',{rows:5,value:form.principalMsg,onChange:v=>setForm(p=>({...p,principalMsg:v.target.value}))}))
+    ),
+    h('div',{className:'tw',style:{padding:'1.5rem'}},
+      h('h2',{style:{fontFamily:'var(--fh)',fontSize:'1.05rem',color:'var(--navy)',marginBottom:'1rem'}},'Contact Information'),
+      h('div',{className:'fg'},h('label',null,'Phone'),h('input',{value:form.phone,onChange:v=>setForm(p=>({...p,phone:v.target.value}))})),
+      h('div',{className:'fg'},h('label',null,'Email'),h('input',{value:form.email,onChange:v=>setForm(p=>({...p,email:v.target.value}))})),
+      h('div',{className:'fg'},h('label',null,'Address'),h('input',{value:form.address,onChange:v=>setForm(p=>({...p,address:v.target.value}))}))
+    ),
+    h('button',{className:'btn-navy',style:{width:'auto',alignSelf:'flex-start',padding:'.7rem 2rem'},onClick:save},'💾 Save & Publish All Changes')
+  );
+}
+
+// ── DASHBOARD ────────────────────────────────────────
+function Dashboard({data,onUpdate,onLogout}){
+  const [tab,setTab]=useState('overview');
+  const [toast,setToast]=useState('');
+  const [saving,setSaving]=useState(false);
+  const showToast=msg=>setToast(msg);
+
+  const upd=(key,endpoint)=>async(val)=>{
+    setSaving(true);setToast('');
+    onUpdate(key,val);
+    await saveKey(endpoint,val);
+    setSaving(false);
+  };
+
+  const sideItems=[
+    {id:'overview',icon:'🏠',label:'Overview'},
+    {sec:'Manage'},
+    {id:'teachers',icon:'👨‍🏫',label:'Teachers'},
+    {id:'gallery',icon:'🖼️',label:'Gallery'},
+    {id:'downloads',icon:'📁',label:'Downloads'},
+    {id:'notices',icon:'📢',label:'Notices'},
+    {sec:'Settings'},
+    {id:'content',icon:'✏️',label:'Content & Info'},
+  ];
+
+  const renderTab=()=>{
+    if(tab==='teachers')return h(TeachersTab,{teachers:data.teachers,onUpdate:upd('teachers',KEYS.teachers),toast:showToast});
+    if(tab==='gallery')return h(GalleryTab,{gallery:data.gallery,onUpdate:upd('gallery',KEYS.gallery),toast:showToast});
+    if(tab==='downloads')return h(DownloadsTab,{downloads:data.downloads,onUpdate:upd('downloads',KEYS.downloads),toast:showToast});
+    if(tab==='notices')return h(NoticesTab,{notices:data.notices,onUpdate:upd('notices',KEYS.notices),toast:showToast});
+    if(tab==='content')return h(ContentTab,{content:data.content,onUpdate:async v=>{onUpdate('content',v);await saveKey(KEYS.content,v);showToast('Content saved!');},toast:showToast});
+    return h('div',null,
+      h('div',{className:'dash-stats'},
+        [{icon:'👨‍🏫',num:data.teachers.length,label:'Teachers'},{icon:'🖼️',num:data.gallery.length,label:'Gallery Photos'},{icon:'📁',num:data.downloads.length,label:'Downloads'},{icon:'📢',num:data.notices.length,label:'Notices'}]
+        .map(s=>h('div',{key:s.label,className:'ds'},h('div',{className:'ds-ic'},s.icon),h('div',{className:'ds-n'},s.num),h('div',{className:'ds-l'},s.label)))
+      ),
+      h('div',{className:'tw',style:{padding:'1.5rem'}},
+        h('h2',{style:{fontFamily:'var(--fh)',fontSize:'1.05rem',color:'var(--navy)',marginBottom:'.9rem'}},'Quick Actions'),
+        h('div',{style:{display:'flex',gap:'.65rem',flexWrap:'wrap'}},
+          [{id:'teachers',label:'👨‍🏫 Manage Teachers'},{id:'gallery',label:'🖼️ Upload Photos'},{id:'downloads',label:'📁 Upload Files'},{id:'notices',label:'📢 Add Notice'},{id:'content',label:'✏️ Edit Content'}]
+          .map(a=>h('button',{key:a.id,className:'bsm b-add',style:{padding:'.55rem 1.1rem'},onClick:()=>setTab(a.id)},a.label))
+        )
+      ),
+      h('div',{className:'tw',style:{padding:'1.5rem',marginTop:0}},
+        h('p',{style:{fontSize:'.82rem',color:'var(--gray)',display:'flex',alignItems:'center',gap:'.5rem'}},'💾 All changes are automatically saved to persistent storage and will remain after page refresh.')
+      )
+    );
+  };
+
+  return h('div',{className:'dash-wrap'},
+    h('div',{className:'sidebar'},
+      h('div',{className:'sb-logo'},h('strong',null,'Admin Panel'),h('span',null,'PM SHRI Kandiyalgoan')),
+      h('ul',{className:'sb-nav'},
+        sideItems.map((s,i)=>s.sec?h('li',{key:'s'+i,className:'sb-section'},s.sec):h('li',{key:s.id},h('button',{className:tab===s.id?'active':'',onClick:()=>setTab(s.id)},s.icon,' ',s.label))),
+        h('li',{style:{marginTop:'1rem',borderTop:'1px solid rgba(255,255,255,.08)',paddingTop:'.5rem'}},h('button',{onClick:onLogout,style:{color:'#f87171'}},'🚪 Logout'))
+      )
+    ),
+    h('div',{className:'dash-content'},
+      h('div',{className:'dh'},h('div',null,h('h1',null,sideItems.find(s=>s.id===tab)?.label||'Dashboard'),h('p',null,'PM SHRI Govt Inter College Kandiyalgoan'))),
+      renderTab(),
+      (toast||saving)&&h(Toast,{msg:toast,saving,onDone:()=>setToast('')})
+    )
+  );
+}
+
+// ── LOGIN ────────────────────────────────────────────
+function Login({onLogin,onBack}){
+  const [email,setEmail]=useState('');
+  const [pass,setPass]=useState('');
+  const [err,setErr]=useState('');
+  const submit=()=>{
+    if(email==='admin@school.in'&&pass==='admin123')onLogin();
+    else setErr('Invalid credentials. Use admin@school.in / admin123');
+  };
+  return h('div',{className:'login-wrap'},
+    h('div',{className:'login-box'},
+      h('div',{className:'l-logo'},h('div',{className:'l-circle'},'PM'),h('h2',null,'Admin Login'),h('p',null,'PM SHRI Govt Inter College')),
+      err&&h('div',{className:'err-box'},err),
+      h('div',{className:'fg'},h('label',null,'Email'),h('input',{type:'email',value:email,onChange:v=>setEmail(v.target.value),placeholder:'admin@school.in'})),
+      h('div',{className:'fg'},h('label',null,'Password'),h('input',{type:'password',value:pass,onChange:v=>setPass(v.target.value),placeholder:'••••••••',onKeyDown:k=>k.key==='Enter'&&submit()})),
+      h('button',{className:'btn-navy',onClick:submit},'Login to Dashboard'),
+      h('button',{style:{marginTop:'1rem',width:'100%',background:'none',border:'none',color:'#6b7280',cursor:'pointer',fontSize:'.82rem',fontFamily:'var(--ff)'},onClick:onBack},'← Back to Website')
+    )
+  );
+}
+
+// ── LOADING ──────────────────────────────────────────
+function Loading(){
+  return h('div',{className:'loading-screen'},
+    h('div',{className:'loading-spinner'}),
+    h('p',{style:{color:'#a0b8d0',fontSize:'.9rem'}},'Loading saved data…')
+  );
+}
+
+// ── ROOT ─────────────────────────────────────────────
+function App(){
+  const [page,setPage]=useState('website');
+  const [ready,setReady]=useState(false);
+  const [data,setData]=useState({teachers:[],notices:[],downloads:[],gallery:[],content:DEFAULT_CONTENT});
+
+  // Load all data from persistent storage on mount
+  useEffect(()=>{
+    loadAll().then(d=>{setData(d);setReady(true);});
+  },[]);
+
+  const updateData=(key,val)=>setData(p=>({...p,[key]:val}));
+
+  if(!ready)return h(Loading);
+  if(page==='login')return h(Login,{onLogin:()=>setPage('dashboard'),onBack:()=>setPage('website')});
+  if(page==='dashboard')return h(Dashboard,{data,onUpdate:updateData,onLogout:()=>setPage('website')});
+
+  return h('div',null,
+    h('div',{className:'admin-bar'},
+      h('span',null,'💾 Data is saved persistently — survives page refresh'),
+      h('button',{className:'abtn',onClick:()=>setPage('login')},'Open Admin Panel →')
+    ),
+    h(NavBar,{onAdminClick:()=>setPage('login')}),
+    h(Hero),
+    // Stats bar
+    h('div',{className:'stats-bar'},
+      h('div',{className:'stats-inner'},
+        [{icon:'🎓',num:'6–12',label:'Classes (CBSE)'},{icon:'👨‍🏫',num:data.teachers.length||'15+',label:'Experienced Staff'},{icon:'👨‍🎓',num:'350+',label:'Students'},{icon:'📍',num:'Kandiyalgoan',label:'Champawat, Uttarakhand'}]
+        .map(s=>h('div',{key:s.label,className:'stat-card'},h('div',{className:'stat-icon'},s.icon),h('div',{className:'stat-num'},s.num),h('div',{className:'stat-label'},s.label)))
+      )
+    ),
+    h(AboutSection,{data:data.content}),
+    h(StaffSection,{teachers:data.teachers}),
+    h(FacilitiesSection),
+    h(GallerySection,{gallery:data.gallery}),
+    h(NoticesSection,{notices:data.notices}),
+    h(DownloadsSection,{downloads:data.downloads}),
+    h(ContactSection,{data:data.content}),
+    h(FooterSection)
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>
+</body>
+</html>
